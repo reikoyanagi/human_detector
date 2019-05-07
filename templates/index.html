@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="content-type" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  </head>
+  <body>
+    <h1>Image inpainting</h1>
+    <h2>Upload image</h2>
+
+    <img src="{{add_query(url_for('static', filename='image.jpg'))}}" width="400"/>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" value="front"name="uploadFile"/>
+        <input type="submit" value="&#xf53f; 修復する" class="fas">
+    </form>
+
+  </body>
+</html>

@@ -1,0 +1,32 @@
+@charset 'utf-8';
+body{
+  font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  text-align: center;
+}
+h1{
+  color:#e9967a;
+}
+h2{
+color:#e8c5ba;
+}
+input.fas{
+  width:100px;
+  height:180px;
+  background-color:#fafad2;
+  cursor:pointer;
+  border-style: none;
+  font-size: 14px;
+}
+label {
+  line-height: 180px;
+  width:300px;
+  height: 180px;
+  background-color: #d2b48c;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+}
+label input {
+  display: none;
+}
+
