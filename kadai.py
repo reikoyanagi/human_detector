@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 # flaskモジュールの直下のFlaskとrequestとioのインポート
 from flask import Flask, request,render_template,make_response,jsonify
 from numpy import *
