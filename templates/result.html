@@ -9,6 +9,7 @@
     <a href="/" class="title">Human Detector</a>
 
     <img src="{{add_query(url_for('static', filename='image.jpg'))}}" width="400"/>
+    <img src="{{add_query(url_for('static', filename='result.jpg'))}}" width="400"/>
     <form action="/upload" method="post" enctype="multipart/form-data">
         <input type="file" value="画像の選択" name="uploadFile"/>
         <input type="submit" value="アップロード">

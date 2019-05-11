@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import ai
 # flaskモジュールの直下のFlaskとrequestとioのインポート
 from flask import Flask, request,render_template,make_response,jsonify
 from numpy import *
@@ -34,15 +37,14 @@ def upload():
         img = background
 
     img.save('static/image.jpg', 'JPEG')
-    #I.open(binary).save('static/image.jpg')
-    #cache.delete(f'view//{key}')
     return render_template('index.html')
-# @app.after_request
-# def add_header(response):
-#     # response.cache_control.no_store = True
-#     if 'Cache-Control' not in response.headers:
-#         response.headers['Cache-Control'] = 'no-store'
-#     return response
+
+@app.route('/process', methods=['POST'])
+def process():
+    ai.segmentation("static/image.jpg", "static/result.jpg")
+    return render_template('result.html')
+
+
 @app.after_request
 def add_header(r):
     r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
@@ -59,20 +61,6 @@ def utility_processor():
         print(line)
         return line
     return dict(add_query=add_query)
-
-
-#@app.context_processor
-#def override_url_for():
-#    return dict(url_for=dated_url_for)
-#
-#def dated_url_for(endpoint, **values):
-#    if endpoint == 'static':
-#        filename = values.get('filename', None)
-#        if filename:
-#            file_path = os.path.join(app.root_path,
-#                                     endpoint, filename)
-#            values['q'] = int(os.stat(file_path).st_mtime)
-#    return url_for(endpoint, **values)
 
 if __name__ == "__main__":
     # webサーバー立ち上げ
