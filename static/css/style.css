@@ -13,21 +13,22 @@ a.title{
   text-decoration: none;
 }
 input.detect{
-  text-decoration: none;
   color:skyblue;
   margin-top: 20px;
   width:300px;
   height:80px;
-  border: solid 2px skyblue;
-  font-size: 14px;
+  border: solid 1px skyblue;
+  font-size: 17px;
   border-radius: 10px;
   outline:none;
+
 }
 
 input.detect:hover{
-  cursor: pointer;
+    transition : all 0.5s ease 0s;
   color:white;
   background-color:skyblue;
+    cursor: pointer;
 }
 
 
